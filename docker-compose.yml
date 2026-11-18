@@ -1,0 +1,10 @@
+services:
+  aclick:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - aclick-data:/app
+    restart: unless-stopped
+volumes:
+  aclick-data:

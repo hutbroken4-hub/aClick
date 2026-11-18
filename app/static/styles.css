@@ -1,0 +1,30 @@
+:root { --primary:#086f83; --primary-dark:#075767; --accent:#f5a623; --ink:#16343b; --muted:#667b80; --surface:#fff; --bg:#edf5f4; --danger:#c83e3e; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+button,input,select,textarea { font:inherit; } button { cursor:pointer; }
+.app-shell { min-height:100vh; }
+.topbar { height:72px; display:flex; align-items:center; justify-content:space-between; padding:0 4vw; background:white; border-bottom:1px solid #dfeaea; position:sticky; top:0; z-index:10; }
+.brand { display:flex; align-items:center; gap:10px; color:var(--primary); font-size:24px; font-weight:800; }
+.brand-mark { width:38px; height:38px; border-radius:12px; display:grid; place-items:center; color:white; background:var(--primary); }
+.role-switch { display:flex; gap:8px; } .role-switch button,.btn { border:0; border-radius:10px; padding:10px 14px; font-weight:750; }
+.role-switch button { background:#edf5f4; color:var(--ink); } .role-switch button.active { background:var(--primary); color:white; }
+.layout { max-width:1180px; margin:auto; padding:28px 20px 60px; }
+.hero { border-radius:20px; background:linear-gradient(120deg,#086f83,#20a5a0); color:white; padding:32px; display:flex; justify-content:space-between; align-items:center; gap:20px; }
+.hero h1 { margin:0 0 8px; font-size:clamp(28px,5vw,44px); } .hero p { margin:0; opacity:.9; }
+.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:20px; }
+.card { background:white; border:1px solid #e2eceb; border-radius:16px; padding:18px; box-shadow:0 8px 24px rgba(22,52,59,.04); }
+.service-card { cursor:pointer; transition:.18s ease; } .service-card:hover { transform:translateY(-3px); border-color:#8fc8c5; }
+.service-card .icon { width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#e5f3f2;font-size:22px; }
+.service-card h3 { margin:14px 0 6px; } .service-card p { color:var(--muted); margin:0 0 14px; font-size:14px; } .price { color:var(--primary); font-weight:800; }
+.stats { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; } .stat { background:white; border-radius:16px; padding:18px; border:1px solid #e2eceb; } .stat strong { display:block; font-size:30px; color:var(--primary); }
+.table-wrap { overflow-x:auto; background:white; border-radius:16px; border:1px solid #e2eceb; }
+table { width:100%; border-collapse:collapse; } th,td { text-align:left; padding:13px 14px; border-bottom:1px solid #edf2f2; } th { color:var(--muted); font-size:12px; text-transform:uppercase; }
+.modal-backdrop { position:fixed; inset:0; background:rgba(10,37,42,.55); display:grid; place-items:center; z-index:30; padding:16px; } .modal { width:min(520px,100%); max-height:90vh; overflow:auto; background:white; border-radius:18px; padding:22px; }
+.modal h2 { margin-top:0; } .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; } .field { display:flex; flex-direction:column; gap:6px; margin-bottom:12px; } .field.full { grid-column:1/-1; }
+.field input,.field select,.field textarea { border:1px solid #cadada; border-radius:10px; padding:11px 12px; background:white; } .actions { display:flex; justify-content:flex-end; gap:8px; }
+.primary { background:var(--primary); color:white; } .secondary { background:#edf5f4; color:var(--ink); } .danger { background:#fdeaea; color:var(--danger); }
+.badge { display:inline-block; padding:5px 9px; border-radius:999px; background:#e8f4f3; color:var(--primary-dark); font-size:12px; font-weight:800; text-transform:capitalize; }
+.login { max-width:430px; margin:10vh auto; } .login .card { padding:28px; } .auth-logo { text-align:center; margin-bottom:24px; }
+.notice { background:#fff7e8; border-left:4px solid var(--accent); padding:12px; border-radius:8px; } .emergency { background:#c83e3e; color:white; }
+@media(max-width:800px) { .grid { grid-template-columns:1fr 1fr; }.stats{grid-template-columns:1fr 1fr}.hero{align-items:flex-start}.topbar{height:auto;padding:12px 16px}.role-switch{display:none;} }
+@media(max-width:520px) { .grid,.stats,.form-grid { grid-template-columns:1fr; }.layout{padding:16px 12px 50px}.hero{padding:24px}.topbar .brand span:last-child{display:none;} }
